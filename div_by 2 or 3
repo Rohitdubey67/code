@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int t,n,k;
+cin>>t;
+while(t--)
+{
+cin>>n;
+k=n/2+n/3-n/6;
+cout<<k<<endl;
+}
+return 0;
+}
