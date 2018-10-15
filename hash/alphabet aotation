@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; cin>>n;
+    vector<string> A(n);
+    map<string,int> m;
+    for(int k=0; k<n; k++){
+        cin>>A[k];
+        int i = 0;
+        int incr = A[k][0]-'a';
+
+        while(A[k][i]){
+            A[k][i]-=incr;
+            if(A[k][i]<'a')
+                A[k][i]+=26;
+            i++;
+        }
+        m[A[k]]++;
+    }
+    for(int k=0; k<n; k++)
+    if(m[A[k]]>1)
+            cout<<1<<endl;
+        else
+            cout<<0<<endl;
+    return 0;
+}
