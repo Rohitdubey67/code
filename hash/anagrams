@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n,i,c,max=1;
+    cin>>n;
+    string s[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>s[i];
+        sort(s[i].begin(),s[i].end());
+    }
+    sort(s,s+n);
+    c=1;
+    for(i=1;i<=n-1;i++)
+    {
+        if(s[i-1]==s[i])
+        c++;
+        else
+        {
+            if(c>max)
+            max=c;
+            c=1;
+        }
+    }
+    if(c>max)
+    max=c;
+    cout<<max<<endl;
+}
